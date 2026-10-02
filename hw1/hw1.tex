@@ -1,0 +1,477 @@
+%
+\documentclass[12pt]{article}
+
+\usepackage[usenames]{color}
+\usepackage{verbatim}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amssymb,amsthm}
+\usepackage{bm}
+%\usepackage[fleqn]{amsmath}
+\usepackage{amsmath}
+% \usepackage[final,notref,notcite,color]{showkeys}
+\usepackage[left=1in,top=1in,right=1in,bottom=1in,letterpaper]{geometry}
+\renewcommand{\baselinestretch}{1.2}
+
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+
+
+
+%% editing
+\usepackage[shortlabels]{enumitem}
+\usepackage[normalem]{ulem}
+
+%% macros for commenting
+\usepackage{mathtools}
+\usepackage[normalem]{ulem} % to use \sout
+
+%% math packages
+% \usepackage{amsmath} % not needed for Springer
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+
+%\usepackage{subfigure}
+%\usepackage{url}
+
+%% a light-weight algorithm environment
+\newtheorem{algo}{Algorithm}
+
+%% highlighting and commenting
+\newcommand{\outline}[1]{{\color{brown}#1}}
+\newcommand{\rev}[1]{{\color{blue}#1}}
+\newcommand{\remove}[1]{{\sout{#1}}}
+\newcommand{\cut}[1]{{}}
+
+%% macros for letters
+
+\newcommand{\va}{{\mathbf{a}}}
+\newcommand{\vb}{{\mathbf{b}}}
+\newcommand{\vc}{{\mathbf{c}}}
+\newcommand{\vd}{{\mathbf{d}}}
+\newcommand{\ve}{{\mathbf{e}}}
+\newcommand{\vf}{{\mathbf{f}}}
+\newcommand{\vg}{{\mathbf{g}}}
+\newcommand{\vh}{{\mathbf{h}}}
+\newcommand{\vi}{{\mathbf{i}}}
+\newcommand{\vj}{{\mathbf{j}}}
+\newcommand{\vk}{{\mathbf{k}}}
+\newcommand{\vl}{{\mathbf{l}}}
+\newcommand{\vm}{{\mathbf{m}}}
+\newcommand{\vn}{{\mathbf{n}}}
+\newcommand{\vo}{{\mathbf{o}}}
+\newcommand{\vp}{{\mathbf{p}}}
+\newcommand{\vq}{{\mathbf{q}}}
+\newcommand{\vr}{{\mathbf{r}}}
+\newcommand{\vs}{{\mathbf{s}}}
+\newcommand{\vt}{{\mathbf{t}}}
+\newcommand{\vu}{{\mathbf{u}}}
+\newcommand{\vv}{{\mathbf{v}}}
+\newcommand{\vw}{{\mathbf{w}}}
+\newcommand{\vx}{{\mathbf{x}}}
+\newcommand{\vy}{{\mathbf{y}}}
+\newcommand{\vz}{{\mathbf{z}}}
+
+\newcommand{\ta}{{\tilde{a}}}
+\newcommand{\tb}{{\tilde{b}}}
+\newcommand{\tc}{{\tilde{c}}}
+\newcommand{\td}{{\tilde{d}}}
+\newcommand{\te}{{\tilde{e}}}
+\newcommand{\tf}{{\tilde{f}}}
+\newcommand{\tg}{{\tilde{g}}}
+
+\newcommand{\ti}{{\tilde{i}}}
+\newcommand{\tj}{{\tilde{j}}}
+\newcommand{\tk}{{\tilde{k}}}
+\newcommand{\tl}{{\tilde{l}}}
+\newcommand{\tm}{{\tilde{m}}}
+\newcommand{\tn}{{\tilde{n}}}
+
+\newcommand{\tp}{{\tilde{p}}}
+\newcommand{\tq}{{\tilde{q}}}
+
+\newcommand{\ts}{{\tilde{s}}}
+
+\newcommand{\tu}{{\tilde{u}}}
+\newcommand{\tv}{{\tilde{v}}}
+\newcommand{\tw}{{\tilde{w}}}
+\newcommand{\tx}{{\tilde{x}}}
+\newcommand{\ty}{{\tilde{y}}}
+\newcommand{\tz}{{\tilde{z}}}
+
+\newcommand{\vA}{{\mathbf{A}}}
+\newcommand{\vB}{{\mathbf{B}}}
+\newcommand{\vC}{{\mathbf{C}}}
+\newcommand{\vD}{{\mathbf{D}}}
+\newcommand{\vE}{{\mathbf{E}}}
+\newcommand{\vF}{{\mathbf{F}}}
+\newcommand{\vG}{{\mathbf{G}}}
+\newcommand{\vH}{{\mathbf{H}}}
+\newcommand{\vI}{{\mathbf{I}}}
+\newcommand{\vJ}{{\mathbf{J}}}
+\newcommand{\vK}{{\mathbf{K}}}
+\newcommand{\vL}{{\mathbf{L}}}
+\newcommand{\vM}{{\mathbf{M}}}
+\newcommand{\vN}{{\mathbf{N}}}
+\newcommand{\vO}{{\mathbf{O}}}
+\newcommand{\vP}{{\mathbf{P}}}
+\newcommand{\vQ}{{\mathbf{Q}}}
+\newcommand{\vR}{{\mathbf{R}}}
+\newcommand{\vS}{{\mathbf{S}}}
+\newcommand{\vT}{{\mathbf{T}}}
+\newcommand{\vU}{{\mathbf{U}}}
+\newcommand{\vV}{{\mathbf{V}}}
+\newcommand{\vW}{{\mathbf{W}}}
+\newcommand{\vX}{{\mathbf{X}}}
+\newcommand{\vY}{{\mathbf{Y}}}
+\newcommand{\vZ}{{\mathbf{Z}}}
+
+\newcommand{\cA}{{\mathcal{A}}}
+\newcommand{\cB}{{\mathcal{B}}}
+\newcommand{\cC}{{\mathcal{C}}}
+\newcommand{\cD}{{\mathcal{D}}}
+\newcommand{\cE}{{\mathcal{E}}}
+\newcommand{\cF}{{\mathcal{F}}}
+\newcommand{\cG}{{\mathcal{G}}}
+\newcommand{\cH}{{\mathcal{H}}}
+\newcommand{\cI}{{\mathcal{I}}}
+\newcommand{\cJ}{{\mathcal{J}}}
+\newcommand{\cK}{{\mathcal{K}}}
+\newcommand{\cL}{{\mathcal{L}}}
+\newcommand{\cM}{{\mathcal{M}}}
+\newcommand{\cN}{{\mathcal{N}}}
+\newcommand{\cO}{{\mathcal{O}}}
+\newcommand{\cP}{{\mathcal{P}}}
+\newcommand{\cQ}{{\mathcal{Q}}}
+\newcommand{\cR}{{\mathcal{R}}}
+\newcommand{\cS}{{\mathcal{S}}}
+\newcommand{\cT}{{\mathcal{T}}}
+\newcommand{\cU}{{\mathcal{U}}}
+\newcommand{\cV}{{\mathcal{V}}}
+\newcommand{\cW}{{\mathcal{W}}}
+\newcommand{\cX}{{\mathcal{X}}}
+\newcommand{\cY}{{\mathcal{Y}}}
+\newcommand{\cZ}{{\mathcal{Z}}}
+
+\newcommand{\ri}{{\mathrm{i}}}
+\newcommand{\rr}{{\mathrm{r}}}
+
+\newcommand{\EE}{{\mathbb{E}}}
+
+
+%% macros for math notions and operators
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\renewcommand{\SS}{{\mathbb{S}}}
+\newcommand{\SSp}{\mathbb{S}_{+}}
+\newcommand{\SSpp}{\mathbb{S}_{++}}
+\newcommand{\sign}{\mathrm{sign}}
+\newcommand{\vzero}{\mathbf{0}}
+\newcommand{\vone}{{\mathbf{1}}}
+
+\newcommand{\st}{{\text{s.t.}}} % subject to
+\newcommand{\St}{{\mathrm{subject~to}}} % subject to
+\newcommand{\op}{{\mathrm{op}}} % subscript for operator norm
+\newcommand{\opt}{{\mathrm{opt}}} % subscript for optimal solution
+%\newcommand{\supp}{{\mathrm{supp}}} % support
+\newcommand{\Prob}{{\mathrm{Prob}}} % probability
+\newcommand{\Diag}{{\mathrm{Diag}}} % vector -> diagonal matrix
+%\newcommand{\diag}{{\mathrm{diag}}} % matrix diagonal -> vector
+\newcommand{\dom}{{\mathrm{dom}}} % domain
+\newcommand{\range}{{\mathrm{range}}} % domain
+%\newcommand{\grad}{{\nabla}}    % gradient
+\newcommand{\tr}{{\mathrm{tr}}} % trace
+\newcommand{\TV}{{\mathrm{TV}}} % total variation
+\newcommand{\Proj}{{\mathrm{Proj}}}
+\newcommand{\prj}{{\mathrm{prj}}}
+\newcommand{\prox}{\mathbf{prox}}
+\newcommand{\refl}{\mathbf{refl}}
+\newcommand{\reflh}{\refl^{\bH}}
+\newcommand{\proxh}{\prox^{\bH}}
+\newcommand{\minimize}{\text{minimize}}
+\newcommand{\bgamma}{\boldsymbol{\gamma}}
+\newcommand{\bsigma}{\boldsymbol{\sigma}}
+\newcommand{\bomega}{\boldsymbol{\omega}}
+\newcommand{\blambda}{\boldsymbol{\lambda}}
+\newcommand{\bH}{\vH}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bB}{\boldsymbol{\cB}}
+\newcommand{\Tau}{\mathrm{T}}
+\newcommand{\tnabla}{\widetilde{\nabla}}
+\newcommand{\TDRS}{T_{\mathrm{DRS}}}
+\newcommand{\TPRS}{T_{\mathrm{PRS}}}
+\newcommand{\TFBS}{T_{\mathrm{FBS}}}
+\newcommand{\best}{\mathrm{best}}
+\newcommand{\kbest}{k_{\best}}
+\newcommand{\diff}{\mathrm{diff}}
+\newcommand{\barx}{\bar{x}}
+\newcommand{\xgbar}{\bar{x}_g}
+\newcommand{\xfbar}{\bar{x}_f}
+\newcommand{\hatxi}{\hat{\xi}}
+\newcommand{\xg}{x_g}
+\newcommand{\xf}{x_f}
+\newcommand{\du}{\mathrm{d}u}
+\newcommand{\dy}{\mathrm{d}y}
+\newcommand{\kconvergence}{\stackrel{k \rightarrow \infty}{\rightarrow }}
+\DeclareMathOperator{\shrink}{shrink} % shrinkage
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\Min}{minimize}
+\DeclareMathOperator*{\Max}{maximize}
+\DeclareMathOperator*{\Fix}{Fix}
+\DeclareMathOperator*{\zer}{zer}
+\DeclareMathOperator*{\nablah}{\nabla^{\bH}}
+\DeclareMathOperator*{\gra}{gra}
+\DeclarePairedDelimiter{\dotpb}{\langle}{\rangle_{\bH}}
+\DeclarePairedDelimiter{\dotpv}{\langle}{\rangle_{\vH}}
+\DeclarePairedDelimiter{\dotp}{\langle}{\rangle}
+
+%% macros for environments math equations
+
+\newcommand{\MyFigure}[1]{../fig/#1}
+
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+
+\newcommand{\bdm}{\begin{displaymath}}
+\newcommand{\edm}{\end{displaymath}}
+
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+
+\newcommand{\bfl}{\begin{flushleft}}
+\newcommand{\efl}{\end{flushleft}}
+
+\newcommand{\bt}{\begin{tabbing}}
+\newcommand{\et}{\end{tabbing}}
+
+\newcommand{\beqn}{\begin{align}}
+\newcommand{\eeqn}{\end{align}}
+
+\newcommand{\beqs}{\begin{align*}} % no equation numbers
+\newcommand{\eeqs}{\end{align*}}  % no equation numbers
+
+%% macros for theorem-like environments
+
+%\newtheorem{theorem}{Theorem}
+\newtheorem{assumption}{Assumption}
+%\newtheorem{condition}{Condition}
+%\newtheorem{rul}{Rule}
+%\newtheorem{definition}{Definition}
+%\newtheorem{corollary}{Corollary}
+%\newtheorem{remark}{Remark}
+%\newtheorem{lemma}{Lemma}
+%\newtheorem{proposition}{Proposition}
+%\newtheorem{example}{Example}
+%\newtheorem{proof}{Proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Assignment 1 of \textbf{MATP4820}}
+\author{Izaak King}
+\date{February 2, 2026}
+
+
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 1}
+Let the matrix $A=\left[\begin{array}{rrr} 2 & -1 & 2 \\ 0 & -3 & 3 \end{array}\right]$. Compute $\|A\|_1$, $\|A\|_2$, and $\|A\|_\infty$.
+
+\vspace{9mm}
+
+\textbf{matrix 1-norm:} $||A||_{1} = \text{max}_{j}\sum_{i}|x_{ij}| = \text{max}\{(|2| + |0|), (|-1| + |-3|), (|2| + |3|)\} = \bm{5}$
+
+\vspace{9mm}
+
+\textbf{matrix 2-norm:}
+
+\vspace{3mm}
+
+First computing $AA^{T}$: 
+
+\[AA^{T} =\left[\begin{array}{rrr} 2 & -1 & 2 \\ 0 & -3 & 3 \end{array}\right] \left[\begin{array}{rrr} 2 & 0\\ -1 & -3 \\ 2 & 3 \end{array}\right] = \left[\begin{array}{rrr} 2(2) - 1(-1) + 2(2) & 2(0) - 1(-3) + 2(3) \\ 0(2) - 3(-1) + 3(2) & 0(0) - 3(-3) + 3(3) \end{array}\right] = \left[\begin{array}{rrr} 9 & 9 \\ 9 & 18 \end{array}\right]\]
+
+\vspace{3mm}
+
+Now computing eigenvalues of $AA^{T}$:
+
+\vspace{3mm}
+
+\[ \text{det}(\lambda I - AA^{T}) = \text{det}\left[\begin{array}{ccc} \lambda - 9 & 9 \\ 9 & \lambda - 18 \end{array}\right] = (\lambda - 9)(\lambda - 18) - 81  = 0 \]
+
+\vspace{3mm}
+
+Solving for $\lambda:$ 
+
+\vspace{3mm}
+
+\[ \lambda^{2} - 27 \lambda + 81 = 0 \implies \lambda = \frac{27 \pm \sqrt{27^2 - 4(81)}}{2}\]
+
+\vspace{3mm}
+
+Therefore, taking largest eigenvalue, $||A||_{2} = \sqrt{\frac{27 + \sqrt{405}}{2}} = \bm{\sqrt{\frac{27 + 9 \sqrt{5}}{2}}}$
+
+\vspace{9mm}
+
+\textbf{matrix $\infty$-norm:} $||A||_{\infty} = \text{max}_{i}\sum_{j}|x_{ij}| = \text{max}\{(|2| + |-1| + |2|), (|0| + |-3| + |3|)\} = \bm{6}$
+
+\newpage
+
+\section*{Problem 2}
+
+Compute the gradient and Hessian matrix of the function $f(x_1, x_2) = 25(x_2-x_1^2)^2 + (1-x_1)^2$. Find all local minimizers of this function. Justify your answer.
+
+\vspace{9mm}
+
+First expanding $f(x_{1}, x_{2})$:
+
+\[f(x_{1},x_{2}) = 25(x_{2}^{2} - 2x_{1}^{2}x_{2} + x_{1}^{4}) + (1 - 2x_{1} + x_{1}^{2}) = 25x_{1}^{4} + 25x_{2}^{2} - 50x_{1}^{2}x_{2} + x_{1}^{2} - 2x_{1} + 1\]
+
+\vspace{3mm}
+
+Compute the gradient:
+
+\[ \nabla f(x_{1}, x_{2}) = \left[\begin{array}{ccc} 100x_{1}^{3} - 100x_{1}x_{2} + 2x_{1}- 2 \\ 50x_{2} - 50x_{1}^{2} \end{array}\right] \]
+
+\vspace{3mm}
+
+Compute the Hessian Matrix:
+
+\[ \nabla^{2}f(x_{1}, x_{2}) = \left[\begin{array}{ccc} 300x_{1}^{2} - 100x_{2} + 2 & - 100x_{1} \\ -100x_{1} & 50 \end{array}\right]\]
+
+\vspace{3mm}
+
+Now solving $\nablaf(x_{1}, x_{2}) = 0$:
+
+\[\begin{cases}
+100x_{1}^{3} - 100x_{1}x_{2} + 2x_{1}- 2  = 0\\ 
+50x_{2} - 50x_{1}^{2} = 0
+\end{cases}\]
+
+\vspace{3mm}
+
+Solving for $x_1, x_2$
+
+\[  \implies x_{1} = 1 \implies x_{2} = 1 \]
+
+\vspace{3mm}
+
+So the solution is $x_{1} = 1, x_{2} = 1$, and this point is a stationary point.
+
+\vspace{3mm}
+\newpage
+Now checking the Hessian Matrix at stationary point (1,1):
+
+\[ \nabla^{2}f(1, 1) = \left[\begin{array}{ccc} 202 & - 100 \\ -100 & 50 \end{array}\right]\]
+
+\[ \lambda_{1} + \lambda_{2} = 202 + 50 = 252 \]
+
+\[ \lambda_{1} \lambda_{2} = 202(50) - (-100(-100)) = 100 \]
+
+\[ \implies \lambda_{1} > 0, \lambda_{2} > 0\]
+
+\vspace{3mm}
+
+\noindent Thus the Hessian Matrix is positive definite, so $x_{1} = 1, x_{2} = 1,$ or (1,1) is the a local minimizer, and the only local minimizer of this function.
+
+\newpage
+
+\section*{Problem 3} 
+
+Let $f(x_1, x_2) = \frac{1}{2}x_1^2 + cx_1x_2 + x_2^2 - x_1 + 2x_2 - 4$, where $c$ is a real number. Give all values of $c$ such that $f$ is convex. 
+
+\vspace{9mm}
+
+\noindent We will use the known fact that $f(x_{1}, x_{2}$ is a twice differentiable function, and that if $\nabla^{2}f(x)$ is Positive Semi-definite at any $x$, then $f$ is convex.
+
+\vspace{3mm}
+
+First, computing the gradient:
+
+\[ \nabla f(x_{1}, x_{2}) = \left[\begin{array}{r} x_{1} + cx_{2} - 1 \\ cx_{1} + 2x_{2} + 2 \end{array}\right] \]
+
+\vspace{3mm}
+
+Now Hessian:
+
+\[\nabla^{2}f(x_{1}, x_{2}) = \left[\begin{array}{rr} 1 & c \\ c & 2 \end{array}\right]\]
+
+\vspace{3mm} 
+
+Since $ 1 \geq 0$ and $2 \geq 0$, we just need $1(2) - c^{2} \geq 0$:
+
+\[ 2 - c^{2} \geq 0 \implies 2 \geq c^{2} \implies -\sqrt{2} \leq c \leq \sqrt{2} \]
+
+\vspace{3mm}
+
+\noindent So, with $-\sqrt{2} \leq c \leq \sqrt{2}$ our Hesian matrix will be Positive Semi-definite. With the Hessian Positive Semidefinite, $f$ will be a convex function. Thus, $f$ is a convex function for $-\sqrt{2} \leq c \leq \sqrt{2}$.
+
+\newpage
+
+\section*{Problem 4} 
+
+Is the sequence $x^{(k)}=1+(-\frac{3}{5})^{2^k}$ for $k=1,2,\ldots$, Q-quadratically convergent to a finite real number? If yes, give the limit and prove it; if not, explain why.
+
+\vspace{9mm}
+\noindent Yes, the sequence is Q-quadratically convergent to the finite limit $x^{*} = 1$
+\vspace{9mm}
+
+\hangindent=2em
+\hangafter=1
+\noindent Proof. Suppose $x^{(k)} \rightarrow x^{*}$ as $k \rightarrow \infty$. We say the convergence is Q-quadratic if there is $M > 0$ such that 
+
+\[ \frac{||x^{(k+1)} - x^{*}||_{2}}{||x^{(k)} - x^{*}||_{2}^{2}} \leq M, 
+\text{ where k is large enough}\]
+
+\vspace{3mm}
+
+First, we can find $x^{*}$:
+
+\[ (-\frac{3}{5})^{2^k} \rightarrow 0 \text{ as } k \rightarrow \infty\]
+\vspace{3mm}
+
+So,
+
+\[x^{(k)} \rightarrow 1 \text{ as } k \rightarrow \infty. \text{ Take } x^{*} = 1.\]
+
+\vspace{3mm}
+Now,
+
+
+
+\[
+\frac{\|x^{(k+1)} - x^*\|_2}{\|x^{(k)} - x^*\|_2^2}
+= \frac{\left|1 + (-\frac{3}{5})^{2^{k+1}} - 1 \right|}{\left|1 + (-\frac{3}{5})^{2^k} - 1\right|^2}
+= \frac{\left(\frac{3}{5}\right)^{2^{k+1}}}{\left(\frac{3}{5}\right)^{2\cdot 2^k}}
+= \frac{\left(\frac{3}{5}\right)^{2\cdot 2^k}}{\left(\frac{3}{5}\right)^{2\cdot 2^k}}
+= 1.
+\]
+
+
+
+
+\vspace{3mm}
+
+Thus,
+
+\[ \frac{||x^{(k+1)} - x^{*}||_{2}}{||x^{(k)} - x^{*}||_{2}^{2}} \leq M, \text{ with } M = 1 > 0. \]
+
+\vspace{3mm}
+
+Therefore, we have shown that the sequence is Q-quadratically convergent to $x^{*} = 1 $
+
+\begin{flushright}
+$\square$
+\end{flushright}
+
+\end{document}

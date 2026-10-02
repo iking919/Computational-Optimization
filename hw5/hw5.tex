@@ -1,0 +1,330 @@
+%
+\documentclass[12pt]{article}
+
+\usepackage[usenames]{color}
+\usepackage{verbatim}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amssymb,amsthm}
+%\usepackage[fleqn]{amsmath}
+\usepackage{amsmath}
+% \usepackage[final,notref,notcite,color]{showkeys}
+\usepackage[left=1in,top=1in,right=1in,bottom=1in,letterpaper]{geometry}
+\renewcommand{\baselinestretch}{1.2}
+
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+
+
+
+%% editing
+\usepackage[shortlabels]{enumitem}
+\usepackage[normalem]{ulem}
+
+%% macros for commenting
+\usepackage{mathtools}
+\usepackage[normalem]{ulem} % to use \sout
+
+%% math packages
+% \usepackage{amsmath} % not needed for Springer
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+
+%\usepackage{subfigure}
+%\usepackage{url}
+
+%% a light-weight algorithm environment
+\newtheorem{algo}{Algorithm}
+
+%% highlighting and commenting
+\newcommand{\outline}[1]{{\color{brown}#1}}
+\newcommand{\rev}[1]{{\color{blue}#1}}
+\newcommand{\remove}[1]{{\sout{#1}}}
+\newcommand{\cut}[1]{{}}
+
+%% macros for letters
+
+\newcommand{\va}{{\mathbf{a}}}
+\newcommand{\vb}{{\mathbf{b}}}
+\newcommand{\vc}{{\mathbf{c}}}
+\newcommand{\vd}{{\mathbf{d}}}
+\newcommand{\ve}{{\mathbf{e}}}
+\newcommand{\vf}{{\mathbf{f}}}
+\newcommand{\vg}{{\mathbf{g}}}
+\newcommand{\vh}{{\mathbf{h}}}
+\newcommand{\vi}{{\mathbf{i}}}
+\newcommand{\vj}{{\mathbf{j}}}
+\newcommand{\vk}{{\mathbf{k}}}
+\newcommand{\vl}{{\mathbf{l}}}
+\newcommand{\vm}{{\mathbf{m}}}
+\newcommand{\vn}{{\mathbf{n}}}
+\newcommand{\vo}{{\mathbf{o}}}
+\newcommand{\vp}{{\mathbf{p}}}
+\newcommand{\vq}{{\mathbf{q}}}
+\newcommand{\vr}{{\mathbf{r}}}
+\newcommand{\vs}{{\mathbf{s}}}
+\newcommand{\vt}{{\mathbf{t}}}
+\newcommand{\vu}{{\mathbf{u}}}
+\newcommand{\vv}{{\mathbf{v}}}
+\newcommand{\vw}{{\mathbf{w}}}
+\newcommand{\vx}{{\mathbf{x}}}
+\newcommand{\vy}{{\mathbf{y}}}
+\newcommand{\vz}{{\mathbf{z}}}
+
+\newcommand{\ta}{{\tilde{a}}}
+\newcommand{\tb}{{\tilde{b}}}
+\newcommand{\tc}{{\tilde{c}}}
+\newcommand{\td}{{\tilde{d}}}
+\newcommand{\te}{{\tilde{e}}}
+\newcommand{\tf}{{\tilde{f}}}
+\newcommand{\tg}{{\tilde{g}}}
+
+\newcommand{\ti}{{\tilde{i}}}
+\newcommand{\tj}{{\tilde{j}}}
+\newcommand{\tk}{{\tilde{k}}}
+\newcommand{\tl}{{\tilde{l}}}
+\newcommand{\tm}{{\tilde{m}}}
+\newcommand{\tn}{{\tilde{n}}}
+
+\newcommand{\tp}{{\tilde{p}}}
+\newcommand{\tq}{{\tilde{q}}}
+
+\newcommand{\ts}{{\tilde{s}}}
+
+\newcommand{\tu}{{\tilde{u}}}
+\newcommand{\tv}{{\tilde{v}}}
+\newcommand{\tw}{{\tilde{w}}}
+\newcommand{\tx}{{\tilde{x}}}
+\newcommand{\ty}{{\tilde{y}}}
+\newcommand{\tz}{{\tilde{z}}}
+
+\newcommand{\vA}{{\mathbf{A}}}
+\newcommand{\vB}{{\mathbf{B}}}
+\newcommand{\vC}{{\mathbf{C}}}
+\newcommand{\vD}{{\mathbf{D}}}
+\newcommand{\vE}{{\mathbf{E}}}
+\newcommand{\vF}{{\mathbf{F}}}
+\newcommand{\vG}{{\mathbf{G}}}
+\newcommand{\vH}{{\mathbf{H}}}
+\newcommand{\vI}{{\mathbf{I}}}
+\newcommand{\vJ}{{\mathbf{J}}}
+\newcommand{\vK}{{\mathbf{K}}}
+\newcommand{\vL}{{\mathbf{L}}}
+\newcommand{\vM}{{\mathbf{M}}}
+\newcommand{\vN}{{\mathbf{N}}}
+\newcommand{\vO}{{\mathbf{O}}}
+\newcommand{\vP}{{\mathbf{P}}}
+\newcommand{\vQ}{{\mathbf{Q}}}
+\newcommand{\vR}{{\mathbf{R}}}
+\newcommand{\vS}{{\mathbf{S}}}
+\newcommand{\vT}{{\mathbf{T}}}
+\newcommand{\vU}{{\mathbf{U}}}
+\newcommand{\vV}{{\mathbf{V}}}
+\newcommand{\vW}{{\mathbf{W}}}
+\newcommand{\vX}{{\mathbf{X}}}
+\newcommand{\vY}{{\mathbf{Y}}}
+\newcommand{\vZ}{{\mathbf{Z}}}
+
+\newcommand{\cA}{{\mathcal{A}}}
+\newcommand{\cB}{{\mathcal{B}}}
+\newcommand{\cC}{{\mathcal{C}}}
+\newcommand{\cD}{{\mathcal{D}}}
+\newcommand{\cE}{{\mathcal{E}}}
+\newcommand{\cF}{{\mathcal{F}}}
+\newcommand{\cG}{{\mathcal{G}}}
+\newcommand{\cH}{{\mathcal{H}}}
+\newcommand{\cI}{{\mathcal{I}}}
+\newcommand{\cJ}{{\mathcal{J}}}
+\newcommand{\cK}{{\mathcal{K}}}
+\newcommand{\cL}{{\mathcal{L}}}
+\newcommand{\cM}{{\mathcal{M}}}
+\newcommand{\cN}{{\mathcal{N}}}
+\newcommand{\cO}{{\mathcal{O}}}
+\newcommand{\cP}{{\mathcal{P}}}
+\newcommand{\cQ}{{\mathcal{Q}}}
+\newcommand{\cR}{{\mathcal{R}}}
+\newcommand{\cS}{{\mathcal{S}}}
+\newcommand{\cT}{{\mathcal{T}}}
+\newcommand{\cU}{{\mathcal{U}}}
+\newcommand{\cV}{{\mathcal{V}}}
+\newcommand{\cW}{{\mathcal{W}}}
+\newcommand{\cX}{{\mathcal{X}}}
+\newcommand{\cY}{{\mathcal{Y}}}
+\newcommand{\cZ}{{\mathcal{Z}}}
+
+\newcommand{\ri}{{\mathrm{i}}}
+\newcommand{\rr}{{\mathrm{r}}}
+
+\newcommand{\EE}{{\mathbb{E}}}
+
+
+%% macros for math notions and operators
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\renewcommand{\SS}{{\mathbb{S}}}
+\newcommand{\SSp}{\mathbb{S}_{+}}
+\newcommand{\SSpp}{\mathbb{S}_{++}}
+\newcommand{\sign}{\mathrm{sign}}
+\newcommand{\vzero}{\mathbf{0}}
+\newcommand{\vone}{{\mathbf{1}}}
+
+\newcommand{\st}{{\text{s.t.}}} % subject to
+\newcommand{\St}{{\mathrm{subject~to}}} % subject to
+\newcommand{\op}{{\mathrm{op}}} % subscript for operator norm
+\newcommand{\opt}{{\mathrm{opt}}} % subscript for optimal solution
+%\newcommand{\supp}{{\mathrm{supp}}} % support
+\newcommand{\Prob}{{\mathrm{Prob}}} % probability
+\newcommand{\Diag}{{\mathrm{Diag}}} % vector -> diagonal matrix
+%\newcommand{\diag}{{\mathrm{diag}}} % matrix diagonal -> vector
+\newcommand{\dom}{{\mathrm{dom}}} % domain
+\newcommand{\range}{{\mathrm{range}}} % domain
+%\newcommand{\grad}{{\nabla}}    % gradient
+\newcommand{\tr}{{\mathrm{tr}}} % trace
+\newcommand{\TV}{{\mathrm{TV}}} % total variation
+\newcommand{\Proj}{{\mathrm{Proj}}}
+\newcommand{\prj}{{\mathrm{prj}}}
+\newcommand{\prox}{\mathbf{prox}}
+\newcommand{\refl}{\mathbf{refl}}
+\newcommand{\reflh}{\refl^{\bH}}
+\newcommand{\proxh}{\prox^{\bH}}
+\newcommand{\minimize}{\text{minimize}}
+\newcommand{\bgamma}{\boldsymbol{\gamma}}
+\newcommand{\bsigma}{\boldsymbol{\sigma}}
+\newcommand{\bomega}{\boldsymbol{\omega}}
+\newcommand{\blambda}{\boldsymbol{\lambda}}
+\newcommand{\bH}{\vH}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bB}{\boldsymbol{\cB}}
+\newcommand{\Tau}{\mathrm{T}}
+\newcommand{\tnabla}{\widetilde{\nabla}}
+\newcommand{\TDRS}{T_{\mathrm{DRS}}}
+\newcommand{\TPRS}{T_{\mathrm{PRS}}}
+\newcommand{\TFBS}{T_{\mathrm{FBS}}}
+\newcommand{\best}{\mathrm{best}}
+\newcommand{\kbest}{k_{\best}}
+\newcommand{\diff}{\mathrm{diff}}
+\newcommand{\barx}{\bar{x}}
+\newcommand{\xgbar}{\bar{x}_g}
+\newcommand{\xfbar}{\bar{x}_f}
+\newcommand{\hatxi}{\hat{\xi}}
+\newcommand{\xg}{x_g}
+\newcommand{\xf}{x_f}
+\newcommand{\du}{\mathrm{d}u}
+\newcommand{\dy}{\mathrm{d}y}
+\newcommand{\kconvergence}{\stackrel{k \rightarrow \infty}{\rightarrow }}
+\DeclareMathOperator{\shrink}{shrink} % shrinkage
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\Min}{minimize}
+\DeclareMathOperator*{\Max}{maximize}
+\DeclareMathOperator*{\Fix}{Fix}
+\DeclareMathOperator*{\zer}{zer}
+\DeclareMathOperator*{\nablah}{\nabla^{\bH}}
+\DeclareMathOperator*{\gra}{gra}
+\DeclarePairedDelimiter{\dotpb}{\langle}{\rangle_{\bH}}
+\DeclarePairedDelimiter{\dotpv}{\langle}{\rangle_{\vH}}
+\DeclarePairedDelimiter{\dotp}{\langle}{\rangle}
+
+%% macros for environments math equations
+
+\newcommand{\MyFigure}[1]{../fig/#1}
+
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+
+\newcommand{\bdm}{\begin{displaymath}}
+\newcommand{\edm}{\end{displaymath}}
+
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+
+\newcommand{\bfl}{\begin{flushleft}}
+\newcommand{\efl}{\end{flushleft}}
+
+\newcommand{\bt}{\begin{tabbing}}
+\newcommand{\et}{\end{tabbing}}
+
+\newcommand{\beqn}{\begin{align}}
+\newcommand{\eeqn}{\end{align}}
+
+\newcommand{\beqs}{\begin{align*}} % no equation numbers
+\newcommand{\eeqs}{\end{align*}}  % no equation numbers
+
+%% macros for theorem-like environments
+
+%\newtheorem{theorem}{Theorem}
+\newtheorem{assumption}{Assumption}
+%\newtheorem{condition}{Condition}
+%\newtheorem{rul}{Rule}
+%\newtheorem{definition}{Definition}
+%\newtheorem{corollary}{Corollary}
+%\newtheorem{remark}{Remark}
+%\newtheorem{lemma}{Lemma}
+%\newtheorem{proposition}{Proposition}
+%\newtheorem{example}{Example}
+%\newtheorem{proof}{Proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Assignment 5 of MATP4820/6610 }
+\author{(Due at 11:59pm on March-19-2026 in GradeScope)}
+\date{}
+
+
+
+\begin{document}
+
+\maketitle
+
+\noindent\textbf{Requirement}: you must write the solutions by yourself. As different problems may be assigned to MATP4820 and 6610 students, \textbf{you must explicitly write whether you are taking MATP4820 or 6610}. 
+
+\vspace{0.2cm}
+
+\noindent\textbf{Bonus}: In addition to the bonus problems (that will be assigned occasionally), you can earn up to 5\% bonus credit if you write your homework in LaTex. 
+
+\section*{Problem 1}
+Find the projection of a given point $\vx\in \RR^n$ onto the set $X$. Justify your solution. For Questions 1 and 2, sketch the set $X$ and plot where the projected point is on $X$.
+
+\begin{enumerate}
+\item  $X = \{\vx\in \RR^2: x_1 \ge 0, x_2 \ge0, 2x_1 + x_2 \le 2\}$; $\vx = [1; 2]$
+
+\item \textbf{(Only for 4820 students:)} $X = \{\vx\in \RR^2: x_1 <= 0, x_1^2 + x_2^2 \le 1\}$; $\vx = [-2; 2]$
+
+\item \textbf{(Only for 6610 students:)} Derive the projection formula for $X = \{\vx\in \RR^n: \vA\vx = \vb\}$ and any $\vx\in\RR^n$, where $\vA \in \RR^{m\times n}$ with $m< n$ has a full-row rank, and $\vb\in \RR^m$ is in the range of $\vA$.
+
+\end{enumerate}
+
+\newpage
+
+\section*{Problem 2} 
+
+Let $g(\vx)=2\|\vx\|_2$ for $\vx\in \RR^n$. 
+\begin{enumerate}
+\item \textbf{(Only for 4820 students:)} 
+
+Let $n=2$. Evaluate the proximal mapping $\prox_g$ at $\left[\begin{array}{r}-1 \\ 2\end{array}\right]$ 
+\item \textbf{(Only for 6610 students:)} 
+ Derive the formula of $\prox_g$ at any point $\vx\in \RR^n$.
+\end{enumerate}
+
+\newpage
+
+\section*{Problem 3} 
+
+Consider the unconstrained quadratic minimization problem:
+\begin{equation}\label{eq:un-quad-min}\tag{QuadMin}
+\Min_\vx f(\vx) = \frac{1}{2}\vx^\top \vA \vx - \vb^\top \vx
+\end{equation}
+where $\vA\in\RR^{n\times n}$ is a symmetric positive definite matrix, and $\vb\in\RR^n$.
+
+Write a solver for \eqref{eq:un-quad-min} by the DFP method. Use the instructor's provided file \verb|quadMin_DFP.m| to write a Matlab function \verb|quadMin_DFP| with input $\vA$, $\vb$, initial vector $\vx0$, and tolerance \verb|tol|, and with stopping condition $\|\nabla f(\vx^k)\| \le \text{tol}$. Also test your function by running the provided test file \verb|test_DFP.m| and compare to the instructor's function. Print your code and the results you get, and print the figures you get.
+
+
+\end{document}

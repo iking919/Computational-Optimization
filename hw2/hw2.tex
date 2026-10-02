@@ -1,0 +1,511 @@
+%
+\documentclass[12pt]{article}
+
+\usepackage[usenames]{color}
+\usepackage{verbatim}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amssymb,amsthm}
+\usepackage{changepage}
+%\usepackage[fleqn]{amsmath}
+\usepackage{amsmath}
+% \usepackage[final,notref,notcite,color]{showkeys}
+\usepackage[left=1in,top=1in,right=1in,bottom=1in,letterpaper]{geometry}
+\renewcommand{\baselinestretch}{1.2}
+
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+
+
+
+%% editing
+\usepackage[shortlabels]{enumitem}
+\usepackage[normalem]{ulem}
+
+%% macros for commenting
+\usepackage{mathtools}
+\usepackage[normalem]{ulem} % to use \sout
+
+%% math packages
+% \usepackage{amsmath} % not needed for Springer
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+
+%\usepackage{subfigure}
+%\usepackage{url}
+
+%% a light-weight algorithm environment
+\newtheorem{algo}{Algorithm}
+
+%% highlighting and commenting
+\newcommand{\outline}[1]{{\color{brown}#1}}
+\newcommand{\rev}[1]{{\color{blue}#1}}
+\newcommand{\remove}[1]{{\sout{#1}}}
+\newcommand{\cut}[1]{{}}
+
+%% macros for letters
+
+\newcommand{\va}{{\mathbf{a}}}
+\newcommand{\vb}{{\mathbf{b}}}
+\newcommand{\vc}{{\mathbf{c}}}
+\newcommand{\vd}{{\mathbf{d}}}
+\newcommand{\ve}{{\mathbf{e}}}
+\newcommand{\vf}{{\mathbf{f}}}
+\newcommand{\vg}{{\mathbf{g}}}
+\newcommand{\vh}{{\mathbf{h}}}
+\newcommand{\vi}{{\mathbf{i}}}
+\newcommand{\vj}{{\mathbf{j}}}
+\newcommand{\vk}{{\mathbf{k}}}
+\newcommand{\vl}{{\mathbf{l}}}
+\newcommand{\vm}{{\mathbf{m}}}
+\newcommand{\vn}{{\mathbf{n}}}
+\newcommand{\vo}{{\mathbf{o}}}
+\newcommand{\vp}{{\mathbf{p}}}
+\newcommand{\vq}{{\mathbf{q}}}
+\newcommand{\vr}{{\mathbf{r}}}
+\newcommand{\vs}{{\mathbf{s}}}
+\newcommand{\vt}{{\mathbf{t}}}
+\newcommand{\vu}{{\mathbf{u}}}
+\newcommand{\vv}{{\mathbf{v}}}
+\newcommand{\vw}{{\mathbf{w}}}
+\newcommand{\vx}{{\mathbf{x}}}
+\newcommand{\vy}{{\mathbf{y}}}
+\newcommand{\vz}{{\mathbf{z}}}
+
+\newcommand{\ta}{{\tilde{a}}}
+\newcommand{\tb}{{\tilde{b}}}
+\newcommand{\tc}{{\tilde{c}}}
+\newcommand{\td}{{\tilde{d}}}
+\newcommand{\te}{{\tilde{e}}}
+\newcommand{\tf}{{\tilde{f}}}
+\newcommand{\tg}{{\tilde{g}}}
+
+\newcommand{\ti}{{\tilde{i}}}
+\newcommand{\tj}{{\tilde{j}}}
+\newcommand{\tk}{{\tilde{k}}}
+\newcommand{\tl}{{\tilde{l}}}
+\newcommand{\tm}{{\tilde{m}}}
+\newcommand{\tn}{{\tilde{n}}}
+
+\newcommand{\tp}{{\tilde{p}}}
+\newcommand{\tq}{{\tilde{q}}}
+
+\newcommand{\ts}{{\tilde{s}}}
+
+\newcommand{\tu}{{\tilde{u}}}
+\newcommand{\tv}{{\tilde{v}}}
+\newcommand{\tw}{{\tilde{w}}}
+\newcommand{\tx}{{\tilde{x}}}
+\newcommand{\ty}{{\tilde{y}}}
+\newcommand{\tz}{{\tilde{z}}}
+
+\newcommand{\vA}{{\mathbf{A}}}
+\newcommand{\vB}{{\mathbf{B}}}
+\newcommand{\vC}{{\mathbf{C}}}
+\newcommand{\vD}{{\mathbf{D}}}
+\newcommand{\vE}{{\mathbf{E}}}
+\newcommand{\vF}{{\mathbf{F}}}
+\newcommand{\vG}{{\mathbf{G}}}
+\newcommand{\vH}{{\mathbf{H}}}
+\newcommand{\vI}{{\mathbf{I}}}
+\newcommand{\vJ}{{\mathbf{J}}}
+\newcommand{\vK}{{\mathbf{K}}}
+\newcommand{\vL}{{\mathbf{L}}}
+\newcommand{\vM}{{\mathbf{M}}}
+\newcommand{\vN}{{\mathbf{N}}}
+\newcommand{\vO}{{\mathbf{O}}}
+\newcommand{\vP}{{\mathbf{P}}}
+\newcommand{\vQ}{{\mathbf{Q}}}
+\newcommand{\vR}{{\mathbf{R}}}
+\newcommand{\vS}{{\mathbf{S}}}
+\newcommand{\vT}{{\mathbf{T}}}
+\newcommand{\vU}{{\mathbf{U}}}
+\newcommand{\vV}{{\mathbf{V}}}
+\newcommand{\vW}{{\mathbf{W}}}
+\newcommand{\vX}{{\mathbf{X}}}
+\newcommand{\vY}{{\mathbf{Y}}}
+\newcommand{\vZ}{{\mathbf{Z}}}
+
+\newcommand{\cA}{{\mathcal{A}}}
+\newcommand{\cB}{{\mathcal{B}}}
+\newcommand{\cC}{{\mathcal{C}}}
+\newcommand{\cD}{{\mathcal{D}}}
+\newcommand{\cE}{{\mathcal{E}}}
+\newcommand{\cF}{{\mathcal{F}}}
+\newcommand{\cG}{{\mathcal{G}}}
+\newcommand{\cH}{{\mathcal{H}}}
+\newcommand{\cI}{{\mathcal{I}}}
+\newcommand{\cJ}{{\mathcal{J}}}
+\newcommand{\cK}{{\mathcal{K}}}
+\newcommand{\cL}{{\mathcal{L}}}
+\newcommand{\cM}{{\mathcal{M}}}
+\newcommand{\cN}{{\mathcal{N}}}
+\newcommand{\cO}{{\mathcal{O}}}
+\newcommand{\cP}{{\mathcal{P}}}
+\newcommand{\cQ}{{\mathcal{Q}}}
+\newcommand{\cR}{{\mathcal{R}}}
+\newcommand{\cS}{{\mathcal{S}}}
+\newcommand{\cT}{{\mathcal{T}}}
+\newcommand{\cU}{{\mathcal{U}}}
+\newcommand{\cV}{{\mathcal{V}}}
+\newcommand{\cW}{{\mathcal{W}}}
+\newcommand{\cX}{{\mathcal{X}}}
+\newcommand{\cY}{{\mathcal{Y}}}
+\newcommand{\cZ}{{\mathcal{Z}}}
+
+\newcommand{\ri}{{\mathrm{i}}}
+\newcommand{\rr}{{\mathrm{r}}}
+
+\newcommand{\EE}{{\mathbb{E}}}
+
+
+%% macros for math notions and operators
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\renewcommand{\SS}{{\mathbb{S}}}
+\newcommand{\SSp}{\mathbb{S}_{+}}
+\newcommand{\SSpp}{\mathbb{S}_{++}}
+\newcommand{\sign}{\mathrm{sign}}
+\newcommand{\vzero}{\mathbf{0}}
+\newcommand{\vone}{{\mathbf{1}}}
+
+\newcommand{\st}{{\text{s.t.}}} % subject to
+\newcommand{\St}{{\mathrm{subject~to}}} % subject to
+\newcommand{\op}{{\mathrm{op}}} % subscript for operator norm
+\newcommand{\opt}{{\mathrm{opt}}} % subscript for optimal solution
+%\newcommand{\supp}{{\mathrm{supp}}} % support
+\newcommand{\Prob}{{\mathrm{Prob}}} % probability
+\newcommand{\Diag}{{\mathrm{Diag}}} % vector -> diagonal matrix
+%\newcommand{\diag}{{\mathrm{diag}}} % matrix diagonal -> vector
+\newcommand{\dom}{{\mathrm{dom}}} % domain
+\newcommand{\range}{{\mathrm{range}}} % domain
+%\newcommand{\grad}{{\nabla}}    % gradient
+\newcommand{\tr}{{\mathrm{tr}}} % trace
+\newcommand{\TV}{{\mathrm{TV}}} % total variation
+\newcommand{\Proj}{{\mathrm{Proj}}}
+\newcommand{\prj}{{\mathrm{prj}}}
+\newcommand{\prox}{\mathbf{prox}}
+\newcommand{\refl}{\mathbf{refl}}
+\newcommand{\reflh}{\refl^{\bH}}
+\newcommand{\proxh}{\prox^{\bH}}
+\newcommand{\minimize}{\text{minimize}}
+\newcommand{\bgamma}{\boldsymbol{\gamma}}
+\newcommand{\bsigma}{\boldsymbol{\sigma}}
+\newcommand{\bomega}{\boldsymbol{\omega}}
+\newcommand{\blambda}{\boldsymbol{\lambda}}
+\newcommand{\bH}{\vH}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bB}{\boldsymbol{\cB}}
+\newcommand{\Tau}{\mathrm{T}}
+\newcommand{\tnabla}{\widetilde{\nabla}}
+\newcommand{\TDRS}{T_{\mathrm{DRS}}}
+\newcommand{\TPRS}{T_{\mathrm{PRS}}}
+\newcommand{\TFBS}{T_{\mathrm{FBS}}}
+\newcommand{\best}{\mathrm{best}}
+\newcommand{\kbest}{k_{\best}}
+\newcommand{\diff}{\mathrm{diff}}
+\newcommand{\barx}{\bar{x}}
+\newcommand{\xgbar}{\bar{x}_g}
+\newcommand{\xfbar}{\bar{x}_f}
+\newcommand{\hatxi}{\hat{\xi}}
+\newcommand{\xg}{x_g}
+\newcommand{\xf}{x_f}
+\newcommand{\du}{\mathrm{d}u}
+\newcommand{\dy}{\mathrm{d}y}
+\newcommand{\kconvergence}{\stackrel{k \rightarrow \infty}{\rightarrow }}
+\DeclareMathOperator{\shrink}{shrink} % shrinkage
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\Min}{minimize}
+\DeclareMathOperator*{\Max}{maximize}
+\DeclareMathOperator*{\Fix}{Fix}
+\DeclareMathOperator*{\zer}{zer}
+\DeclareMathOperator*{\nablah}{\nabla^{\bH}}
+\DeclareMathOperator*{\gra}{gra}
+\DeclarePairedDelimiter{\dotpb}{\langle}{\rangle_{\bH}}
+\DeclarePairedDelimiter{\dotpv}{\langle}{\rangle_{\vH}}
+\DeclarePairedDelimiter{\dotp}{\langle}{\rangle}
+
+%% macros for environments math equations
+
+\newcommand{\MyFigure}[1]{../fig/#1}
+
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+
+\newcommand{\bdm}{\begin{displaymath}}
+\newcommand{\edm}{\end{displaymath}}
+
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+
+\newcommand{\bfl}{\begin{flushleft}}
+\newcommand{\efl}{\end{flushleft}}
+
+\newcommand{\bt}{\begin{tabbing}}
+\newcommand{\et}{\end{tabbing}}
+
+\newcommand{\beqn}{\begin{align}}
+\newcommand{\eeqn}{\end{align}}
+
+\newcommand{\beqs}{\begin{align*}} % no equation numbers
+\newcommand{\eeqs}{\end{align*}}  % no equation numbers
+
+%% macros for theorem-like environments
+
+%\newtheorem{theorem}{Theorem}
+\newtheorem{assumption}{Assumption}
+%\newtheorem{condition}{Condition}
+%\newtheorem{rul}{Rule}
+%\newtheorem{definition}{Definition}
+%\newtheorem{corollary}{Corollary}
+%\newtheorem{remark}{Remark}
+%\newtheorem{lemma}{Lemma}
+%\newtheorem{proposition}{Proposition}
+%\newtheorem{example}{Example}
+%\newtheorem{proof}{Proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Assignment 2 of \bf{MATP4820}}
+\author{Izaak King}
+\date{Feb-09-2026}
+
+
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 1}
+Consider the sequence $\{x^{(k)}\}_{k=0}^\infty$ defined by
+$$x^{(k)}=\left\{\begin{array}{ll}
+(\frac{3}{4})^{2^k}, & \text{ if }k\text{ is even}\\[0.1cm]
+\frac{2}{k+2}x^{(k-1)}, & \text{ if }k\text{ is odd}
+\end{array}\right.$$
+\begin{enumerate}
+\item
+Is this sequence Q-quadratically convergent? If yes, prove it; if not, explain why. 
+
+\vspace{8mm}
+
+No, this sequence is not Q-quadratically convergent. 
+
+First, as $k \rightarrow \infty,$ \[\left(\frac{3}{4}\right)^{2^k} \rightarrow 0, \quad\frac{2}{k+2}x^{(k-1)} \rightarrow 0 \implies x^* = 0\]
+
+Now, if k is even:
+\[ \frac{\left\|x^{(k + 1)} - x^* \right\|_2}{\left\|x^{(k)} - x^* \right\|^2_2} = \frac{\left| \frac{2}{(k + 1) + 2}x^{(k + 1 - 1)}\right|}{\left|(\frac{3}{4})^{2^k}\right|^2} = \frac{\left| \frac{2}{k + 3}x^{(k)}\right|}{\left| (\frac{3}{4})^{2^k}\right|^2} = \frac{\left|\frac{2}{k + 3}(\frac{3}{4})^{2^k}\right|}{\left|(\frac{3}{4})^{2^k}\right|^2} = \frac{\left|\frac{2}{k + 3}\right|}{\left|(\frac{3}{4})^{2^k}\right|} = \frac{2}{k + 3}\left(\frac{4}{3}\right)^{2^k}\]
+
+Therefore, as $k \rightarrow \infty$ \[ \frac{\left\|x^{(k + 1)} - x^* \right\|_2}{\left\|x^{(k)} - x^* \right\|^2_2} = \frac{2}{k + 3}\left(\frac{4}{3}\right)^{2^k} \rightarrow \infty\]
+
+Thus, for even k, \[\frac{\left\|x^{(k + 1)} - x^* \right\|_2}{\left\|x^{(k)} - x^* \right\|^2_2} \rightarrow \infty\]
+
+So, there is no M such that \[\frac{\left\|x^{(k + 1)} - x^* \right\|_2}{\left\|x^{(k)} - x^* \right\|^2_2} \leq M,\]
+
+Therefore, $\{x^{(k)}\}_{k=0}^\infty$ is not Q-quadratically convergent
+
+\newpage
+
+\item Is this sequence R-quadratically convergent? If yes, prove it; if not, explain why.
+\end{enumerate}
+
+\vspace{8mm}
+
+\noindent Yes the sequence is R-quadratically convergent.
+
+\vspace{4mm}
+
+
+\begin{proof}First, let $\{x^{(k)}\}_{k=0}^\infty$ converge to $x^*$. To show the sequence $x^{(k)}$ is R-quadratically \begin{adjustwidth}{2em}{}convergent, we have to show there is $\{v^{(k)}\}_{k=0}^\infty$ such that
+
+\[ \left\|x^{(k)} - x^*\right\|_2 \leq v^{(k)}, \text{ and }v^{(k)} \text{ Q-quadratically converges to 0.}\]
+Then, as $k \rightarrow \infty$,
+\[\left(\frac{3}{4}\right)^{2^k} \rightarrow 0, \text{ and } \frac{2}{k + 2}x^{(k - 1)} = \frac{2}{k + 2}\left(\frac{3}{4}\right)^{2^{(k-1)}} \rightarrow 0 \]
+Thus, $x^* = 0$.
+Now, take $\{v^{(k)}\}_{k=0}^\infty = \left(\sqrt{\frac{3}{4}}\right)^{2^k}$.
+
+\noindent Then if k is even,
+\[ \left\|x^{(k)} - x^*\right\|_2 = \left|\left(\frac{3}{4}\right)^{2^k}\right| \leq \left(\sqrt{\frac{3}{4}}\right)^{2^k} = v^{(k)}\]
+If k is odd,
+\[ \left\|x^{(k)} - x^*\right\|_2 = \left|\frac{2}{k + 2}x^{(k - 1)}\right| = \left|\frac{2}{k + 2}\left(\frac{3}{4}\right)^{2^{(k - 1)}}\right| \leq \left(\sqrt{\frac{3}{4}}\right)^{2^k} = v^{(k)}\]
+Thus, $\left\|x^{(k)} - x^*\right\|_2 \leq v^{(k)}$.
+
+\noindent Now, we will show $\{v^{(k)}\}_{k=0}^\infty$ Q-quadratically converges to 0.
+
+\noindent Note, as $k \rightarrow \infty$, $\left(\sqrt{\frac{3}{4}}\right)^{2^k} \rightarrow 0$, so $v^* = 0$, and $v^{(k)}$ converges to 0.
+Then,
+\[ \frac{\left\|v^{(k + 1)} - v^*\right\|_2}{\left\|v^{(k)} - v^*\right\|^2_2} = \frac{\left(\sqrt{\frac{3}{4}}\right)^{2^{k + 1}}}{\left(\left(\sqrt{\frac{3}{4}}\right)^{2^k}\right)^2} = 1\]
+Since the ratio is bounded by 1, the Q-quadratic condition is satisfied, and $v^{(k)}$ Q-quadratically converges to 0.
+\noindent Therefore we have shown there is $\{v^{(k)}\}_{k=0}^\infty$ such that $\left\|x^{(k)} - x^*\right\|_2 \leq v^{(k)}$, and $v^{(k)}$ Q-quadratically converges to 0, so $\{x^{(k)}\}_{k=0}^\infty$ is R-Quadratic.
+
+\end{adjustwidth}
+
+\end{proof}
+
+
+
+
+
+\newpage
+
+\section*{Problem 2}
+Consider the linear system
+\begin{equation}\label{eq:lin-sys}
+\begin{aligned}
+2x_1 - x_2 = 3\\
+-x_1 + 4x_2 = 2
+\end{aligned}
+\end{equation}
+
+Define the iterative update scheme
+\begin{equation}\label{eq:scheme-1}
+\begin{aligned}
+x_1^{(k+1)} = \frac{x_2^{(k)} +3}{2},\\
+x_2^{(k+1)} = \frac{x_1^{(k)} + 2}{4}.
+\end{aligned}
+\end{equation}
+Does the sequence $\{(x_1^{(k)},x_2^{(k)})\}_{k=0}^\infty$ generated by the scheme in \eqref{eq:scheme-1} from any initial point $(x_1^{(0)},x_2^{(0)})$ always converge to the solution of the linear system in \eqref{eq:lin-sys}? If yes, prove it; if not, explain why and give a specific initial point $(x_1^{(0)},x_2^{(0)})$ such that the generated sequence converges to the solution of \eqref{eq:lin-sys}.
+\vspace{8mm}
+
+\noindent Yes the sequence always converges to the solution of the linear system.
+
+\vspace{4mm}
+
+
+\begin{proof}First, we solve the linear system,
+\begin{adjustwidth}{2em}{}
+\begin{equation}\label{eq:lin-sys}
+\begin{aligned}
+2x_1 - x_2 = 3 \rightarrow x_1 = 2\\
+-x_1 + 4x_2 = 2 \rightarrow x_2 = 1
+\end{aligned}
+\end{equation} 
+So, $x^* = 
+\begin{bmatrix}
+2 \\ 1
+\end{bmatrix}
+$
+
+\noindent Then, we can take the error of our current sequence $\{x^{(k)}\}_{k = 0}^{\infty} = \{ x_1^{(k)}, x_2^{(k)}\}_{k = 0}^{\infty}$, to be written as $\left\|x^{(k)} - x^*\right\|$. 
+
+\noindent Now, \[ \left\|x^{(k)} - x^*\right\|^{2}_{2} = (x_1^{(k)} - 2)^2 + (x_2^{(k)} - 1)^2\]
+
+\noindent Then, after an iteration, the error of our current solution is given by $\left\|x^{(k + 1)} - x^*\right\|$
+
+\[ \left\|x^{(k + 1)} - x^*\right\|^2_2 = \left\| 
+\begin{bmatrix}
+\frac{x_2^{(k)} + 3}{2} \\
+\frac{x_1^{(k)} + 2}{4} 
+\end{bmatrix} - \begin{bmatrix}
+2 \\ 
+1
+\end{bmatrix}
+\right\|^2_2 = \left\|
+\begin{bmatrix}
+\frac{x_2^{(k)}}{2} - \frac{1}{2}\\
+\frac{x_1^{(k)}}{4}  - \frac{1}{2}
+\end{bmatrix}\right\|^2_2 = \frac{(x_2^{(k)} - 1)^2}{4} + \frac{(x_1^{(k)} - 2)^2}{16}
+\]
+
+\noindent Then,
+\[ \frac{(x_2^{(k)} - 1)^2}{4} + \frac{(x_1^{(k)} - 2)^2}{16}
+\leq \frac{1}{4}\left((x_1^{(k)} - 2)^2 + (x_2^{(k)} - 1)^2\right)\]
+\[\implies \left\|x^{(k + 1)} - x^*\right\|^2_2 \leq \frac{1}{4}\left\|x^{(k)} - x^*\right\|^2_2 \implies \left\|x^{(k + 1)} - x^*\right\|_2 \leq \frac{1}{2}\left\|x^{(k)} - x^*\right\|_2\]
+
+\noindent Now, in general, when iterating
+\[\left\|x^{(k)} - x^*\right\|_2 \leq \frac{1}{2}^k\left\|x^{(0)} - x^*\right\|_2 \]
+
+\noindent And, as $k \rightarrow \infty$,
+\[ \frac{1}{2}^k\left\|x^{(0)} - x^*\right\|_2 \rightarrow 0.\]
+
+\noindent Thus, as we iterate, the error of our solution goes to 0 for any initial point, proving it always converges to the exact solution of the linear system.
+\end{adjustwidth}
+
+\end{proof}
+
+
+
+
+\newpage
+
+\section*{Problem 3}
+Let $\{x^{(k)}\}_{k=1}^\infty$ and $\{y^{(k)}\}_{k=1}^\infty$ be two scalar sequences. Suppose $x^{(k)}$ Q-sublinearly converges to $x^*$ and $y^{(k)}$ Q-linearly converges to $y^*$. 
+\begin{enumerate}
+\item Must $x^{(k)} + y^{(k)}$ be Q-sublinearly convergent to $x^*+y^*$? If yes, prove it; if not, give a counter example. 
+
+\vspace{8mm}
+
+\noindent Yes, $x^{(k)} + y^{(k)}$ must be Q-sublinearly convergent to $x^* + y^*$.
+
+\vspace{4mm}
+
+
+\begin{proof}Assume $\{x^{(k)}\}_{k=1}^\infty$ and $\{y^{(k)}\}_{k=1}^\infty$ are two scalar sequences, and $\{x^{(k)}\}_{k=1}^\infty$
+\begin{adjustwidth}{2em}{}
+\noindent Q-sublinearly converges to $x^*$, and $\{y^{(k)}\}_{k=1}^\infty$ Q-linearly converges $y^*$
+
+\noindent That is, $k \rightarrow \infty$
+\[ \frac{\left\|x^{(k + 1)} - x^*\right\|_2}{\left\|x^{(k)} - x^*\right\|_2} \rightarrow 1 \text{ and } \frac{\left|y^{(k + 1)} - y^*\right\|_2}{\left|y^{(k)} - y^*\right\|_2} \leq r, \text{ for } r\in(0,1)\]
+
+\noindent Now, define $z^{k} = x^{(k)} + y^{(k)}$, $z^* = x^* + y^*$. We will show $z^{(k)}$ is Q-sublinearly convergent.
+
+\noindent First note, as $k \rightarrow \infty$
+\[ \frac{\left\|x^{(k + 1)} - x^*\right\|_2}{\left\|x^{(k)} - x^*\right\|_2} \rightarrow 1 \text{ and } \frac{\left\|y^{(k + 1)} - y^*\right\|_2}{\left\|y^{(k)} - y^*\right\|_2} \leq r, \text{ for } r\in(0,1)\]
+
+\noindent This implies $\frac{\left\|y^{(k)} - y^*\right\|_2}{\left\|x^{(k)} - x^*\right\|_2}\rightarrow 0$, because the Q-sublinear sequence $x^{(k)}$ decays slower than the Q-linear sequence $y^{(k)}$.
+
+
+\noindent Now, 
+
+\[ \frac{\left\|z^{(k + 1)} - z^*\right\|_2}{\left\|z^{(k)} - z^*\right\|_2} = \frac{\left|x^{(k + 1)} - x^* + y^{(k + 1)} - y^*\right|}{\left|x^{(k)} - x^* + y^{(k)} - y^*\right|} = \frac{\left|\frac{x^{(k + 1)} - x^*}{x^{(k)} - x^*} + \frac{y^{(k + 1)} - y^*}{x^{(k)} - x^*}\right|}{\left| 1 + \frac{y^{(k)} - y^*}{x^{(k)} - x^*}\right|}\]
+
+\noindent Now, as we have shown, as $k \rightarrow \infty$,
+
+\[ \frac{x^{(k + 1)} - x^*}{x^{(k)} - x^*} \rightarrow 1, \quad \frac{y^{(k + 1)} - y^*}{x^{(k)} - x^*} \rightarrow 0, \quad \frac{y^{(k)} - y^*}{x^{(k)} - x^*} \rightarrow 0,\]
+
+\noindent Thus, as $k \rightarrow \infty$,
+\[ \frac{\left\|z^{(k + 1)} - z^*\right\|_2}{\left\|z^{(k)} - z^*\right\|_2} = \frac{\left|\frac{x^{(k + 1)} - x^*}{x^{(k)} - x^*} + \frac{y^{(k + 1)} - y^*}{x^{(k)} - x^*}\right|}{\left| 1 + \frac{y^{(k)} - y^*}{x^{(k)} - x^*}\right|} \rightarrow 1\]
+
+\noindent So, $z^{(k)}$ is Q-sublinearly convergent. Since $z^{(k)}$ was defined as $z^{(k)} = x^{(k)} + y^{(k)}$ with $x^{(k)}$ Q-sublinear convergent and $y^{(k)}$ Q-linear convergent, we have proven our claim.
+
+
+\end{adjustwidth}
+
+\end{proof}
+
+
+\newpage
+
+
+\item Can $x^{(k)} + y^{(k)}$ be Q-linearly convergent to $x^*+y^*$? If yes, give an example; if not, explain why.
+\vspace{8mm}
+
+No, $x^{(k)} + y^{(k)}$ can never be Q-linearly convergent.
+
+\vspace{4mm}
+
+
+As proven in Part 1, define $z^{(k)} = x^{(k)} + y^{(k)}$ and $z^* = x^* + y^*$. Then
+\[
+\frac{\left\|z^{(k+1)} - z^*\right\|_2}{\left\|z^{(k)} - z^*\right\|_2} \rightarrow 1 \quad \text{as } k \rightarrow \infty.
+\]
+
+By definition, a sequence is Q-linearly convergent if there exists $r \in (0,1)$ such that
+\[
+\frac{\left\|z^{(k+1)} - z^*\right\|_2}{\left\|z^{(k)} - z^*\right\|_2} \leq r \quad \text{for all sufficiently large } k.
+\]
+
+Since the limit of the ratio for $z^{(k)}$ is 1, which is not less than 1, it is impossible for the sequence to satisfy the Q-linear convergence criterion. Therefore, $x^{(k)} + y^{(k)}$ cannot be Q-linearly convergent. 
+
+\vspace{2mm}
+
+\end{enumerate}
+
+\end{document}
